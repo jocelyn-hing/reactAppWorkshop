@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import DogPhoto from './kahvi.png';
 
 class SubscriberCounter extends Component {
   render() {
@@ -35,6 +36,15 @@ class AddRemoveSubscriber extends Component {
   }
 }
 
+class VideoThumbnail extends Component {
+  render() {
+    return (    
+    <div>
+      <h2> {this.props.title} {this.props.views} </h2>
+      <img src={this.props.thumbnail}/>
+    </div>);
+  }
+}
 
 class App extends Component{
 
@@ -59,6 +69,11 @@ class App extends Component{
         <AddRemoveSubscriber 
           numSubscribers={numSubscribers}
           onSubscriberUpdate={this.handleSubscriberUpdate}
+        />
+        <VideoThumbnail 
+          title={"Doggo Video"}
+          views={1000} 
+          thumbnail={DogPhoto} 
         />
       </div>
     );
